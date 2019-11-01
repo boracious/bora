@@ -4,3 +4,21 @@ CREATE TABLE `test` (
   `name` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+
+
+CREATE TABLE `board` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_cd` varchar(20) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `content` text NOT NULL,
+  `tag` varchar(1000) DEFAULT NULL,
+  `view_cnt` int(11) NOT NULL DEFAULT '0',
+  `reg_id` varchar(45) NOT NULL,
+  `reg_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `edit_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+
+INSERT INTO board(category_cd, title, content, tag, reg_id) 
+VALUES ('01', 'Example02', 'Content 02 hello', '#tagtest', 'bora');
